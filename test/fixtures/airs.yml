@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_id: 1
+  room_name: MyString
+  location: MyString
+  description: MyText
+  price: 1
+  accomodation: 1
+  bathrooms: 1
+  bedrooms: 1
+  beds: 1
+  room_type: MyString
+  is_TV: false
+  is_Air_Conditioning: false
+  is_Laptop_friendly_workspace: false
+  is_Washer: false
+  is_Kitchen: false
+  is_WiFi: false
+  is_Family_friendly: false
+  is_Pool: false
+  is_Gym: false
+  is_Wheelchair_accessible: false
+  is_Pets_allowed: false
+  house_rules: MyText
+
+two:
+  room_id: 1
+  room_name: MyString
+  location: MyString
+  description: MyText
+  price: 1
+  accomodation: 1
+  bathrooms: 1
+  bedrooms: 1
+  beds: 1
+  room_type: MyString
+  is_TV: false
+  is_Air_Conditioning: false
+  is_Laptop_friendly_workspace: false
+  is_Washer: false
+  is_Kitchen: false
+  is_WiFi: false
+  is_Family_friendly: false
+  is_Pool: false
+  is_Gym: false
+  is_Wheelchair_accessible: false
+  is_Pets_allowed: false
+  house_rules: MyText

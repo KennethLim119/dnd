@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @air.image.url(:medium)%>
+</p>
+<p>
+  <strong>Room name:</strong>
+  <%= @air.room_name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @air.price %>
+</p>
+
+<p>
+  <strong>Beds:</strong>
+  <%= @air.beds %>
+</p>
+
+<p>
+  <strong>Room type:</strong>
+  <%= @air.room_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_air_path(@air) %> |
+<%= link_to 'Back', airs_path %>

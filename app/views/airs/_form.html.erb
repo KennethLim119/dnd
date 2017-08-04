@@ -1,0 +1,110 @@
+<%= form_for @air, html: { multipart: true } do |f| %>
+  <% if @air.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@air.errors.count, "error") %> prohibited this air from being saved:</h2>
+
+      <ul>
+      <% @air.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_id %><br>
+    <%= f.number_field :room_id %>
+  </div>
+  <div class="field">
+    <%= f.label :room_name %><br>
+    <%= f.text_field :room_name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :accomodation %><br>
+    <%= f.number_field :accomodation %>
+  </div>
+  <div class="field">
+    <%= f.label :bathrooms %><br>
+    <%= f.number_field :bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :bedrooms %><br>
+    <%= f.number_field :bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :beds %><br>
+    <%= f.number_field :beds %>
+  </div>
+  <div class="field">
+    <%= f.label :room_type %><br>
+    <%= f.select :room_type, ['Entire home', 'Private room', 'Shared room'] %>
+  </div>
+  <div class="field">
+    <%= f.label :is_TV %><br>
+    <%= f.check_box :is_TV %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Air_Conditioning %><br>
+    <%= f.check_box :is_Air_Conditioning %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Laptop_friendly_workspace %><br>
+    <%= f.check_box :is_Laptop_friendly_workspace %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Washer %><br>
+    <%= f.check_box :is_Washer %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Kitchen %><br>
+    <%= f.check_box :is_Kitchen %>
+  </div>
+  <div class="field">
+    <%= f.label :is_WiFi %><br>
+    <%= f.check_box :is_WiFi %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Family_friendly %><br>
+    <%= f.check_box :is_Family_friendly %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Pool %><br>
+    <%= f.check_box :is_Pool %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Gym %><br>
+    <%= f.check_box :is_Gym %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Wheelchair_accessible %><br>
+    <%= f.check_box :is_Wheelchair_accessible %>
+  </div>
+  <div class="field">
+    <%= f.label :is_Pets_allowed %><br>
+    <%= f.check_box :is_Pets_allowed %>
+  </div>
+  <div class="field">
+    <%= f.label :house_rules %><br>
+    <%= f.text_area :house_rules %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

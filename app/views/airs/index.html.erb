@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Airs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room name</th>
+      <th>Price</th>
+      <th>Room type</th>
+      <th>Beds</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airs.each do |air| %>
+      <tr>
+        <td><%= image_tag air.image.url(:thumb) %></td>
+        <td><%= air.room_name %></td>
+        <td><%= air.price %></td>
+        <td><%= air.beds %></td>
+        <td><%= air.room_type %></td>
+        <td><%= link_to 'Show', air %></td>
+        <td><%= link_to 'Edit', edit_air_path(air) %></td>
+        <td><%= link_to 'Destroy', air, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Air', new_air_path %>
