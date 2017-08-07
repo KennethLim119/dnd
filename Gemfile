@@ -49,3 +49,5 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'omniauth-facebook'
 gem 'omniauth'
+gem 'ratyrate'
+gem 'geocoder'

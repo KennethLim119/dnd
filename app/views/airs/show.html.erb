@@ -23,6 +23,7 @@
   <%= @air.room_type %>
 </p>
 
+review  : <%= imdb_style_rating_for @ari, current_user %>
 
 <%= link_to 'Edit', edit_air_path(@air) %> |
 <%= link_to 'Back', airs_path %>

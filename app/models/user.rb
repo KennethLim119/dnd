@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   has_many :airs
-  
+  ratyrate_rater
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
