@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807063949) do
+ActiveRecord::Schema.define(version: 20170809065947) do
+
+  create_table "acts_as_bookable_bookings", force: :cascade do |t|
+    t.integer  "bookable_id"
+    t.string   "bookable_type"
+    t.integer  "booker_id"
+    t.string   "booker_type"
+    t.integer  "amount"
+    t.text     "schedule"
+    t.datetime "time_start"
+    t.datetime "time_end"
+    t.datetime "time"
+    t.datetime "created_at"
+  end
+
+  add_index "acts_as_bookable_bookings", ["bookable_type", "bookable_id"], name: "index_acts_as_bookable_bookings_bookable"
+  add_index "acts_as_bookable_bookings", ["booker_type", "booker_id"], name: "index_acts_as_bookable_bookings_booker"
 
   create_table "airs", force: :cascade do |t|
     t.integer  "room_id"
     t.string   "room_name"
-    t.string   "location"
     t.text     "description"
     t.integer  "price"
     t.integer  "accomodation"
@@ -42,6 +57,9 @@ ActiveRecord::Schema.define(version: 20170807063949) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "location"
   end
 
   create_table "average_caches", force: :cascade do |t|

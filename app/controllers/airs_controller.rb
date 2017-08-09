@@ -1,6 +1,6 @@
 class AirsController < ApplicationController
   before_action :set_air, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /airs
   # GET /airs.json
   def index
@@ -29,7 +29,7 @@ class AirsController < ApplicationController
     respond_to do |format|
       if @air.save
         format.html { redirect_to @air, notice: 'Air was successfully created.' }
-        format.json { render :show, status: :created, location: @air }
+        format.json { render :show, status: :created}
       else
         format.html { render :new }
         format.json { render json: @air.errors, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class AirsController < ApplicationController
     respond_to do |format|
       if @air.update(air_params)
         format.html { redirect_to @air, notice: 'Air was successfully updated.' }
-        format.json { render :show, status: :ok, location: @air }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @air.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class AirsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def air_params
-      params.require(:air).permit(:image, :room_id, :room_name, :location, :description, :price, :accomodation, :bathrooms, :bedrooms, :beds, :room_type, :is_TV, :is_Air_Conditioning, :is_Laptop_friendly_workspace, :is_Washer, :is_Kitchen, :is_WiFi, :is_Family_friendly, :is_Pool, :is_Gym, :is_Wheelchair_accessible, :is_Pets_allowed, :house_rules)
+      params.require(:air).permit(:image, :room_id, :room_name, :location, :description, :price, :accomodation, :bathrooms, :bedrooms, :beds, :room_type, :is_TV, :is_Air_Conditioning, :is_Laptop_friendly_workspace, :is_Washer, :is_Kitchen, :is_WiFi, :is_Family_friendly, :is_Pool, :is_Gym, :is_Wheelchair_accessible, :is_Pets_allowed, :house_rules, :longitude, :latitude)
     end
 end

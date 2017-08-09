@@ -1,29 +1,142 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= image_tag @air.image.url(:medium)%>
-</p>
-<p>
-  <strong>Room name:</strong>
-  <%= @air.room_name %>
+ <%= image_tag @air.image.url(:medium) %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @air.price %>
+ <strong>Room name:</strong>
+ <%= @air.room_name %>
 </p>
 
 <p>
-  <strong>Beds:</strong>
-  <%= @air.beds %>
+ <strong>Location:</strong>
+ <%= @air.location %>
 </p>
 
 <p>
-  <strong>Room type:</strong>
-  <%= @air.room_type %>
+ <strong>Longitude:</strong>
+ <%= @air.longitude %>
 </p>
 
-review  : <%= imdb_style_rating_for @ari, current_user %>
+<p>
+ <strong>Latitude:</strong>
+ <%= @air.latitude %>
+</p>
+
+<p>
+ <strong>Description:</strong>
+ <%= @air.description %>
+</p>
+
+<p>
+ <strong>Price:</strong>
+ <%= @air.price %>
+</p>
+
+<p>
+ <strong>Accomodation:</strong>
+ <%= @air.accomodation %>
+</p>
+
+<p>
+ <strong>Bathrooms:</strong>
+ <%= @air.bathrooms %>
+</p>
+
+<p>
+ <strong>Bedrooms:</strong>
+ <%= @air.bedrooms %>
+</p>
+
+<p>
+ <strong>Beds:</strong>
+ <%= @air.beds %>
+</p>
+
+<p>
+ <strong>Room type:</strong>
+ <%= @air.room_type %>
+</p>
+
+<p>
+ <strong>TV:</strong>
+ <%= @air.is_TV %>
+</p>
+
+<p>
+ <strong>Air conditioning:</strong>
+ <%= @air.is_Air_Conditioning %>
+</p>
+
+<p>
+ <strong>Laptop friendly workspace:</strong>
+ <%= @air.is_Laptop_friendly_workspace %>
+</p>
+
+<p>
+ <strong>Washer:</strong>
+ <%= @air.is_Washer %>
+</p>
+
+<p>
+ <strong>Kitchen:</strong>
+ <%= @air.is_Kitchen %>
+</p>
+
+<p>
+ <strong>WiFi:</strong>
+ <%= @air.is_WiFi %>
+</p>
+
+<p>
+ <strong>Family friendly:</strong>
+ <%= @air.is_Family_friendly %>
+</p>
+
+<p>
+ <strong>Pool:</strong>
+ <%= @air.is_Pool %>
+</p>
+
+<p>
+ <strong>Gym:</strong>
+ <%= @air.is_Gym %>
+</p>
+
+<p>
+ <strong>Wheelchair accessible:</strong>
+ <%= @air.is_Wheelchair_accessible %>
+</p>
+
+<p>
+ <strong>Pets allowed:</strong>
+ <%= @air.is_Pets_allowed %>
+</p>
+
+<p>
+ <strong>House rules:</strong>
+ <%= @air.house_rules %>
+</p>
+review  : <%= imdb_style_rating_for @air, current_user %>
+
+ <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: <%= @air.latitude %>, lng: <%= @air.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9Pw5eIEneIYp24g7EW5-iQ7oadtlRD4&callback=initMap">
+    </script>
 
 <%= link_to 'Edit', edit_air_path(@air) %> |
 <%= link_to 'Back', airs_path %>
